@@ -2,7 +2,7 @@
 
 # Secure OpenVPN server installer for Debian, Ubuntu, CentOS, Fedora and Arch Linux
 # https://github.com/angristan/openvpn-install
-
+current_dir= $(pwd);
 function isRoot () {
 	if [ "$EUID" -ne 0 ]; then
 		return 1
@@ -1205,3 +1205,4 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 else
 	installOpenVPN
 fi
+cd $current_dir
